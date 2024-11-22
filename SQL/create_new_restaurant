@@ -1,2 +1,75 @@
 https://replit.com/@praepraek/datasqlprae#main.sql
-/main.sql
+-- create 3 tables
+CREATE TABLE staff(
+  staff_id INT,
+  staff_name text
+);
+INSERT INTO staff VALUES
+  (1, 'Prae'),
+  (2, 'David'),
+  (3, 'T');
+
+.mode table
+
+SELECT * FROM staff;
+
+CREATE TABLE menu(
+  menu_id INT,
+  menu_name text,
+  menu_price real
+);
+INSERT INTO menu values
+  (1, 'Tomyam', 100),
+  (2, 'Padthai', 50),
+  (3, 'Noodle', 60),
+  (4, 'Fried rice', 70),
+  (5, 'Kaprao', 65);
+
+.mode table
+
+SELECT * FROM menu;
+
+CREATE TABLE orders(
+  order_id INT,
+  order_date date,
+  staff_id INT,
+  menu_id TEXT INT
+);
+INSERT INTO orders values
+  (1, '2022-01-01', 1, 1),
+  (2, '2022-01-01', 2, 2),
+  (3, '2022-01-01', 1, 1),
+  (4, '2022-01-01', 2, 5),
+  (5, '2022-01-01', 3, 3),
+  (6, '2022-01-01', 3, 4),
+  (7, '2022-01-02', 1, 3),
+  (8, '2022-01-02', 2, 1),
+  (9, '2022-01-02', 3, 5),
+  (10, '2022-01-02', 3, 4);
+
+.mode table
+
+  SELECT * FROM orders;
+
+-- with clause
+WITH prae_order AS (
+  SELECT * FROM orders
+  WHERE staff_id = 1
+)
+SELECT menu_name, menu_price, staff_id, order_date
+FROM prae_order
+JOIN menu
+ON prae_order.menu_id = menu.menu_id;
+
+-- subquery
+SELECT staff_id, menu_id FROM(
+  SELECT * FROM orders
+  WHERE order_date = '2022-01-01'
+);
+
+-- aggregate function & group by
+SELECT order_date, sum(menu_price)
+FROM orders
+JOIN menu
+ON orders.menu_id = menu.menu_id
+GROUP BY order_date;
