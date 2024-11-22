@@ -1,1 +1,6 @@
 This is my project of machine learning.
+นำข้อมูลมาจาก student admission record มาจาก kaggle
+split data เป็น 70:30
+นำมา train ด้วย linear regression และ knn model
+นำมา score คะแนนสอบ test split
+test กับข้อมูล test split ดู error mae rmse
