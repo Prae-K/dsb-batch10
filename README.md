@@ -10,4 +10,5 @@ My data science and analytics projects
 4. R programing - data transformation
 5. R programing - data visualization
 6. R programing - create new database
-7. Looker GA4 Dashboard
+7. Looker studio Dashboard - superstore_report
+8. Machine Learning - model for predict admission test score by age and gender
