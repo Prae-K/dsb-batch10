@@ -12,3 +12,4 @@ My data science and analytics projects
 6. R programing - create new database
 7. Looker studio Dashboard - superstore_report
 8. Machine Learning - model for predict admission test score by age and gender
+9. Foundation Pandas
