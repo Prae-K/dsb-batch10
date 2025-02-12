@@ -13,3 +13,4 @@ My data science and analytics projects
 7. Looker studio Dashboard - superstore_report
 8. Machine Learning - model for predict admission test score by age and gender
 9. Foundation Pandas
+10. Power BI - Report ecomerce
